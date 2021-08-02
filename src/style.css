@@ -1,0 +1,65 @@
+input {
+  border-right: none;
+  border-top: none;
+  border-left: none;
+}
+h2 {
+  text-align: center;
+}
+
+.All button {
+  margin-left: 300px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  height: 30px;
+  font-weight: 700;
+}
+.All {
+  align-items: center;
+  margin-left: 600px;
+  width: 750px;
+  background-color: grey;
+  box-shadow: 1px 1px 2px 2px black;
+}
+h3 {
+  text-align: center;
+}
+.mna {
+  background-color: #fff;
+  overflow-y: scroll;
+  height: 300px;
+}
+.display {
+  margin-left: 10px;
+}
+@media (max-width: 450px) {
+  .All {
+    margin-left: 100px;
+
+    width: 550px;
+  }
+
+  h2 {
+    margin-right: 150px;
+  }
+  p {
+    margin-right: 20px;
+  }
+  .display {
+    margin-left: 150px;
+  }
+  .All p {
+    margin-left: 200px;
+  }
+  .All button {
+    margin-left: 190px;
+  }
+  h4 {
+    margin-left: -135px;
+  }
+
+  select {
+    margin-left: 170px;
+    display: flex;
+  }
+}
