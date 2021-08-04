@@ -14,6 +14,7 @@ const App = () => {
       contact: ''
     }
   ]);
+
   const [NewCovid, setNewCovid] = useState({
     PName: '',
     Surname: '',
@@ -39,50 +40,82 @@ const App = () => {
       contact: ''
     });
   };
+  const handleDelete = id => {
+    setCovid(Covid.filter(det => det.id !== id));
+  };
+
   return (
     <div className="All" onSubmit={event => event.preventDefault()}>
       <h2>Covid-19 Form</h2>
       <div className="mna">
-        <Patient pandemic={Covid} />
+        <Patient pandemic={Covid} delete={handleDelete} />
       </div>
       <div>
         <h5 style={{ textAlign: 'center' }}> Fill your details below:</h5>
 
         <div className="data">
-          <label style={{ marginLeft: 30 }}>Name:</label>
-          <input
-            value={NewCovid.PName}
-            onChange={e =>
-              setNewCovid({ ...NewCovid, PName: e.currentTarget.value })
-            }
-            type="text"
-            name="PName"
-            style={{ marginLeft: 213 }}
-          />
+          <tr>
+            {' '}
+            <th>
+              <label>Name:</label>
+            </th>
+            <span style={{ marginLeft: 30 }}>
+              <th>
+                <input
+                  value={NewCovid.PName}
+                  onChange={e =>
+                    setNewCovid({ ...NewCovid, PName: e.currentTarget.value })
+                  }
+                  type="text"
+                  name="PName"
+                  style={{ marginLeft: 140 }}
+                />
+              </th>{' '}
+            </span>
+          </tr>
         </div>
         <div className="data">
-          <label style={{ marginLeft: 30 }}>Surname: </label>
-          <input
-            value={NewCovid.Surname}
-            onChange={e =>
-              setNewCovid({ ...NewCovid, Surname: e.currentTarget.value })
-            }
-            type="text"
-            name="Surname"
-            style={{ marginLeft: 190 }}
-          />
+          <tr>
+            {' '}
+            <th>
+              <label>Surname: </label>
+            </th>
+            <span style={{ marginLeft: 130 }}>
+              <th>
+                {' '}
+                <input
+                  value={NewCovid.Surname}
+                  onChange={e =>
+                    setNewCovid({ ...NewCovid, Surname: e.currentTarget.value })
+                  }
+                  type="text"
+                  name="Surname"
+                  style={{ marginLeft: 20 }}
+                />
+              </th>
+            </span>
+          </tr>
         </div>
         <div className="data">
-          <label style={{ marginLeft: 30 }}>ID number: </label>
-          <input
-            value={NewCovid.id}
-            onChange={e =>
-              setNewCovid({ ...NewCovid, id: e.currentTarget.value })
-            }
-            type="text"
-            name="id"
-            style={{ marginLeft: 177 }}
-          />
+          <tr>
+            <th>
+              {' '}
+              <label>ID number: </label>
+            </th>
+            <span style={{ marginLeft: 30 }}>
+              <th>
+                <input
+                  value={NewCovid.id}
+                  onChange={e =>
+                    setNewCovid({ ...NewCovid, id: e.currentTarget.value })
+                  }
+                  type="text"
+                  name="id"
+                  style={{ marginLeft: 105 }}
+                />
+              </th>
+            </span>
+          </tr>
         </div>
 
         <br />
@@ -174,9 +207,6 @@ const App = () => {
       </p>
 
       <button onClick={() => PatientDetailsSet(NewCovid)}>VIEW RESULT</button>
-      <p style={{ font: 'initial' }}>
-        for more sites ask dlaminitshaya@gmail.com
-      </p>
     </div>
   );
 };
